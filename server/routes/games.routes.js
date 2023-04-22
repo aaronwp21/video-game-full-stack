@@ -16,7 +16,7 @@ router
     [
       body('title').isString().withMessage("Value for 'title' must be a string").notEmpty().trim().escape(),
       body('games_console').isString().withMessage("Value for 'games_console' must be a string").notEmpty().trim().escape(),
-      body('cover_url').isString().withMessage("Value for 'cover_url' must be a string").notEmpty().trim().escape(),
+      body('cover_url').isString().withMessage("Value for 'cover_url' must be a string").notEmpty().trim(),
     ],
     addGame,
   )
@@ -25,7 +25,7 @@ router
     [
       body('title').isString().withMessage("Value for 'title' must be a string").optional().trim().escape(),
       body('games_console').isString().withMessage("Value for 'games_console' must be a string").optional().trim().escape(),
-      body('cover_url').isString().withMessage("Value for 'cover_url' must be a string").optional().trim().escape(),
+      body('cover_url').isString().withMessage("Value for 'cover_url' must be a string").optional().trim(),
     ],
     updateGame,
   )
